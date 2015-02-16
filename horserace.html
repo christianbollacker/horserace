@@ -8,57 +8,60 @@
   <header>
     <h1>Horse Race - The Game</h1>
   </header>
-  <section class='main'>
-    <section id='banner'>
-      <img src="images/banner.png">
+  <main>
+    <section class='hook'>
+      <section id='banner'>
+        <img src="images/banner.png">
+      </section>
+      <aside id='winers'>
+        <h3>Past Winers</h3>
+        <ul>
+          <li>Place Holder</li>
+        </ul>
+      </aside>
     </section>
-    <aside>
-      <h3>Past Winers</h3>
-      <ul>
-        <li>Place Holder</li>
-      </ul>
-    </aside>
-  </section>
-  <section class='pickpony'>
-    <article>
-      <h2></h2>
-      <img src"#">
-      <p>This is place holder text for California Chrome</p>
-      <button>Pick me!</button>
-    </article>
-    <article>
-      <h2></h2>
-      <img src"#">
-      <p>This is place holder text for Seabiscuit</p>
-      <button>Pick me!</button>
-    </article>
-    <article>
-      <h2></h2>
-      <img src"#">
-      <p>This is place holder text for Seattle Slew</p>
-      <button>Pick me!</button>
-    </article>
-  </section>
-  <section>
+    <section class='pickpony'>
+      <article class='pony' id='horse1'>
+        <h2>California Chrome</h2>
+        <img src="images/horse1.png">
+        <p>This is place holder text for California Chrome</p>
+        <button>Pick me!</button>
+      </article>
+      <article class='pony' id='horse2'>
+        <h2>Seabiscuit</h2>
+        <img src="images/horse2.png">
+        <p>This is place holder text for Seabiscuit</p>
+        <button>Pick me!</button>
+      </article>
+      <article class='pony' id='horse3'>
+        <h2>Seattle Slew</h2>
+        <img src="images/horse3.png">
+        <p>This is place holder text for Seattle Slew</p>
+        <button>Pick me!</button>
+      </article>
+    </section>
     <section class='racetrack'>
-      <div class='horse'id='calChrome'>
-      </div>
-      <img src="#">
+      <section>
+        <img id='calChrome' src="images/horse1.png">
+      </section>
+      <section>
+        <img id='seaBiscuit' src="images/horse2.png">
+      </section>
+      <section>
+        <img id='seattleSlew' src="images/horse3.png">
+      </section>
     </section>
-    <section>
-      <div class='horse'id='seaBiscuit'>
-      </div>
-      <img src="#">
-    </section>
-    <section>
-      <div class='horse'id='seattleSlew'>
-      </div>
-      <img src="#">
-    </section>
-  </section>
-  <footer>
-    
+    <button id='start'>Start the Race!</button>
+  </main>
+  <footer class='foothide'>
+    <a href="#"><h3 id='info'>More Info</h3></a>
+    <ul>
+      <li>Made by: Christian Bollacker</li>
+      <li>How to play</li>
+      <li>About the Code</li>
+    </ul>
   </footer>
+<script src='javascript/horserace.js'></script>
 </body>
 </html>
 
