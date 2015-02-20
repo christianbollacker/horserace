@@ -13,7 +13,12 @@ $('#start').on('click', function() {
 
 });
 
-/*
+
+$('#start').on('click', function() {
+
+
+
+
 var finishLine = 100;
 var horseRace = function() {
   calChrome.run();
@@ -25,7 +30,6 @@ var raceStatus = function() {
   console.log(seaBiscuit.horseStatus());
   console.log(seattleSlew.horseStatus());
 }
-
 var allHorseMoves = function() {
   console.log(calChrome.allMoves());
   console.log(seaBiscuit.allMoves());
@@ -65,19 +69,22 @@ var Horse = function(name, speed, endurance){
     return('Here are the postions after each move that ' + this.name + " made. " + this.eachMove + " " + this.eachMove.length);
   };
 }
-
 var calChrome = new Horse('California Chrome', 9, 6);
 var seaBiscuit = new Horse('Seabiscuit', 7, 7);
 var seattleSlew = new Horse('Seattle Slew', 5, 8.5);
-
-
 while(calChrome.position < finishLine && seaBiscuit.position < finishLine && seattleSlew.position < finishLine ) {
   horseRace();
 };
-
 console.log('The race is finished. Here are the standings.')
 raceStatus();
 console.log(raceWinner());
 allHorseMoves();
 
-*/
+  $.each(calChrome.eachMove, function() {
+        var yards = this;
+    $('#horse1').animate({
+      marginLeft: "1000"
+      }, 5000, "linear", function() {
+   });
+  });
+});
