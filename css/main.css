@@ -223,12 +223,15 @@ th {
 /*===============================================================*/
 /*! End of normalize.css v3.0.2 | MIT License | git.io/normalize */
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #46DBE8;
   font-family: verdana;
   font-color:;
-  margin-bottom: 0px;
+  margin-bottom: 0px;git 
 }
 
 header {
@@ -308,42 +311,34 @@ main {
   display: block;
   background-color: #BBBEB5;
   width: 960px;
-  height: 475px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
 .pony {
+  overflow: hidden;
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 12.5px;
   margin-right: 0px;
   margin-top: 20px;
-  height: 350px;
+  margin-bottom: 20px;
   width: 300px;
+  min-height: 462px;
   border-radius: 10px;
   text-align: center;
 }
 
 .pony img {
-  width: 300px;
+  width: 285px;
   height: 275px;
 }
 
-.chosen {
-  border: 2px solid #f6f6f6;
-  display: inline-block;
-  margin-left: 10px;
-  margin-right: 0px;
-  margin-top: 20px;
-  height: 350px;
-  width: 300px;
-  border-radius: 10px;
-  text-align: center;
+.pony button {
+  margin-bottom: 20px;
 }
 
-.chosen img {
-  width: 298px;
-  height: 273px;
+.chosen {
+  border: 5px solid #f6f6f6;
 }
 
 #calChrome {
