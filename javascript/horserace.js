@@ -1,43 +1,53 @@
 $(function() {
+  $('#start').hide();
+  $('#awards').hide();
+
   $('.pony button').click(function() {
     $(this).parent().addClass('chosen');
     $('.pony button').hide();
+    $('#start').slideDown('slow');
+    
+    /*This is where I need to find a way to declare my horse choice based on the '.pony button' parent
+     - also make sure the variable has global scope for later use outside this function*/
+    
   });
   $('#info').click(function() {
     $('footer').toggleClass('footshow');
   });
 });
 
-
 $('#start').on('click', function() {
 
   var finishLine = 100;
+
   var horseRace = function() {
     calChrome.run();
     seaBiscuit.run();
     seattleSlew.run();
 
-    updatePosition(calChrome);
-    updatePosition(seaBiscuit);
-    updatePosition(seattleSlew);
+    calChrome.updatePosition();
+    seaBiscuit.updatePosition();
+    seattleSlew.updatePosition();
+  }
 
-    function updatePosition(horse){
-    $('#' + horse.num).animate({
-      marginLeft: (horse.position * 10)
-      }, 500, 'linear');
-    }
+  var allFinish = function () {
+    calChrome.raceFinish();
+    seaBiscuit.raceFinish();
+    seattleSlew.raceFinish();
+  }
 
-  };
   var raceStatus = function() {
     console.log(calChrome.horseStatus());
     console.log(seaBiscuit.horseStatus());
     console.log(seattleSlew.horseStatus());
   }
+
   var allHorseMoves = function() {
     console.log(calChrome.allMoves());
     console.log(seaBiscuit.allMoves());
     console.log(seattleSlew.allMoves());
   }
+
   var raceWinner = function() {
     if (calChrome.position > seaBiscuit.position && calChrome.position > seattleSlew.position) {
       return(calChrome.name);
@@ -50,6 +60,13 @@ $('#start').on('click', function() {
     }
   }
 
+  function raceHistory() {
+    var toList = function (){
+      return "<li>" + raceWinner(); + "</li>";
+    }
+    $('#winners > ul').prepend(toList());
+  }
+    
   var Horse = function(name, speed, endurance, num){
     this.name = name;
     this.speed = speed;
@@ -68,6 +85,15 @@ $('#start').on('click', function() {
     };
     this.run = function() {
       this.position += (this.raceSpeed() * this.raceMojo());
+      this.eachMove.push(Math.floor(this.position));
+    };
+    this.updatePosition = function() {
+      $('#' + this.num).animate({marginLeft: (this.position * 10)}, 500, 'linear');
+    };
+    this.raceFinish = function() {
+      if (this.position < 100) {
+        $('#' + this.num).animate({marginLeft: '1000'}, 200, 'linear');
+      }
     };
     this.allMoves = function() {
       return('Here are the postions after each move that ' + this.name + " made. " + this.eachMove + " " + this.eachMove.length);
@@ -82,10 +108,24 @@ $('#start').on('click', function() {
     horseRace();
   };
 
+  allFinish();
+
   console.log('The race is finished. Here are the standings.')
   raceStatus();
   console.log(raceWinner());
   allHorseMoves();
+  $('#awards').show();
 
 });
+
+$('#reset').click(function() {
+  $('#start').hide();
+  $('#awards').hide();
+  $('.pony button').show();
+  $('.pony').removeClass('chosen');
+  raceHistory();
+});
+
+
+
 
