@@ -1,32 +1,35 @@
 $(function() {
   $('#start').hide();
   $('#awards').hide();
+  $('.detail').hide();
 
   $('.pony button').on('click', function() {
     $(this).parent().addClass('chosen');
     $('.pony button').hide();
-    $('#start').slideDown('slow');
+    $('#start').slideDown('fast');
   });
 
   $('#calChrome').on('click', function() {
-    var userChoice = calChrome.name;
+    userChoice = calChrome.name;
     console.log('The user has picked ' + userChoice + ' to win.');
   });
 
   $('#seaBiscuit').on('click', function() {
-    var userChoice = seaBiscuit.name;
+    userChoice = seaBiscuit.name;
     console.log('The user has picked ' + userChoice + ' to win.');
   });
 
   $('#seattleSlew').on('click', function() {
-    var userChoice = seattleSlew.name;
+    userChoice = seattleSlew.name;
     console.log('The user has picked ' + userChoice + ' to win.');
   });
 
   $('#info').on('click', function() {
-    $('footer').toggleClass('footshow');
+    $('.detail').slideToggle('fast');
+    $('html, body').animate({
+      scrollTop: $('footer').offset().top
+    }, 'slow');
   });
-
 
   var finishLine = 100;
 
@@ -86,7 +89,7 @@ $(function() {
       if (userChoice == raceWinner()) {
         return ("<p>Your horse won!  You sure now how to pick your ponies.</p>");
       } else {
-        return ("<p>Your horse lost...  Better luck next time picking the ponies</p>");
+        return ("<p>Your horse lost...  Better luck next time picking the ponies.</p>");
       }
     }
     $('#awards').prepend(goodPick());
@@ -170,6 +173,3 @@ $(function() {
   });
 
 });
-
-
-

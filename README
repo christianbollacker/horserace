@@ -1,3 +1,11 @@
-Horse Race the game is currently a work in progess.  It was posted only for my personal web access.
+This is Horse Race - The Game
 
-The HTML is mostly in place.  The CSS is in need of work.  Currently the JS is in an HTML file inside a script tag to I can test it independently.  horsescript.html
+The game and the website that contains the game are fully functional now.
+
+The game is contained in horserace.js it contains a function that runs a race between three horses: California Chrome, Seabiscuit, and Seattle Slew.  Each horse has varying degrees of speed and stamina.  I wrote in a method for the Horse constructor that valued stamina more and speed less as the race went on.  I called this function raceSpeed.  To add an element of randomness I used Math.random in my raceMojo function so the results would vary race to race.  The positon of the horses is checked after each turn during the race and it is fun to see the positions change throughout.  The final results vary enough to make each race feel random and exciting.
+
+I used jquery and vanilla js throughout to help with the site functionaity and game play.
+
+Various sources on the internet were used to help me through troubled spots in development.  The MDN was the most prolific.
+
+Special thanks to Nick K for added assistance.

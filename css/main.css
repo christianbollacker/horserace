@@ -244,7 +244,7 @@ header {
   width: 100%;
   height: 90px;
 }
-h1 {
+header h1 {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 48pt;
   text-align: center;
@@ -252,7 +252,7 @@ h1 {
   margin-bottom: 10px;
 }
 .podium {
-  margin-top: 120px;
+  margin-top: 115px;
   width: 100%;
   position: fixed;
 }
@@ -263,22 +263,19 @@ h1 {
   display: block;
   z-index: 1;
   width: 980px;
-  height: 200px;
+  height: 165px;
+  border: 4px solid #9DA5A8;
   border-radius: 10px;
   background-color: #f6f6f6;
   text-align: center;
 }
 
 #awards h1 {
-  padding-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   font-family: verdana;
   font-size: 30pt;
 }
-/*
-#awards button {
-  margin-left: 418.5px;
-}
-*/
 
 main {
   width: 960px;
@@ -371,15 +368,15 @@ main {
   border: 5px solid #f6f6f6;
 }
 
-#calChrome {
+#one {
   background-color: #FF554D;
 }
 
-#seaBiscuit {
+#two {
   background-color: #93FF59;
 }
 
-#seattleSlew {
+#three {
   background-color: #9659FF;
 }
 
@@ -389,6 +386,7 @@ main {
   margin-left: -65px;
   margin-bottom: 20px;
   border-radius: 10px;
+  background: url("..//images/finish.png");
   background-color: #FFFA71;
 }
 
@@ -414,22 +412,38 @@ main {
 
 footer {
   width: 100%;
-  min-height: 40px;
+  min-height: 25px;
   background-color: #E8B746;
   text-align: center;
+  padding-bottom: 5px;
   margin-bottom: 0px;
 }
 
 footer h3 {
   margin-top: 5px;
+  margin-bottom: 0px;
 }
 
-.foothide ul {
-  display: none  
+#info {
+  cursor: pointer;
 }
 
-.footshow ul {
-  display: inline-block;
-  list-style-type: none;
-  padding: 1em;
+.detail {
+  overflow: hidden;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 960px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  border: 2px solid #9DA5A8;
+  border-radius: 5px;  
+}
+
+.detail p {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
 }
