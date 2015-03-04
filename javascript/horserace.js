@@ -87,7 +87,7 @@ $(function() {
     } 
     var goodPick = function () {
       if (userChoice == raceWinner()) {
-        return ("<p>Your horse won!  You sure now how to pick your ponies.</p>");
+        return ("<p>Your horse won!  You sure know how to pick your ponies.</p>");
       } else {
         return ("<p>Your horse lost...  Better luck next time picking the ponies.</p>");
       }
