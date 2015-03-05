@@ -157,17 +157,19 @@ $(function() {
     console.log(raceWinner());
     allHorseMoves();
     awardShow();
-
+    
     $('#awards').delay(4000).show('fast');
+  //  $('#start').setAttribute('disabled', 'true');
   });
 
-  $('#reset').click(function() {
+  $('#reset').on('click', function() {
     $('#start').hide();
     $('#awards').hide();
     $('#awards h1').remove();
     $('#awards p').remove();
     $('.pony button').show();
     $('.pony').removeClass('chosen');
+  //  $('#start').removeAttribute('disabled');
     raceHistory();
     raceReset();
   });
